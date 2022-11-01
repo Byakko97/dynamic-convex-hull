@@ -3,7 +3,7 @@ let points = [];
 function setup() {
     createCanvas(720, 360);
     for(let i = 0; i < 20; i++) {
-        points[i++] = new Point(random(), random());
+        points[i] = new Point(random(0, 720), random(0, 360));
     }
 }
 

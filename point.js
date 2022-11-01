@@ -1,5 +1,7 @@
+new p5;
+
 const POINT_COLOR = color(0, 0, 255);
-const POINT_DIAM = 10;
+const POINT_DIAM = 5;
 
 class Point {
     constructor(x, y) {
