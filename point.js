@@ -10,7 +10,7 @@ class Point {
     less_than(other) {
         return this.x != other.x ? this.x < other.x : this.y < other.y;
     }
-    show() {
+    draw() {
         noStroke();
         fill(POINT_COLOR);
         ellipse(this.x, this.y, POINT_DIAM, POINT_DIAM);
