@@ -1,4 +1,4 @@
-const ACTIVE_COLOR = color(255, 0, 0);
+const ACTIVE_COLOR = color(0, 255, 0);
 const INACTIVE_COLOR = color(0);
 
 class U_hull {
@@ -12,7 +12,11 @@ class U_hull {
     }
     draw() {
         cur_color = this.active ? ACTIVE_COLOR : INACTIVE_COLOR;
-        // TODO: inorder traversal of treap
+        let list = [];
+        inorder(this.treap, list);
+        for(let i = 0; i + 1 < list.length; i++) {
+            draw_line(list[i].key, list[i + 1].key, cur_color);
+        }
     }
 }
 
@@ -24,9 +28,9 @@ function bridge(left, right) {
 
 // Joins left and right hulls into a single one
 function join(left, right) {
-    var p, q;
+    let p, q;
     [p, q] = bridge(left, right);
-    var left_side, right_side;
+    let left_side, right_side;
     [left_side, left.treap] = split(left.treap, p);
     [right.treap, right_side] = split(right.treap, Point(q.x, q.y - 1));
     left.active = false;
