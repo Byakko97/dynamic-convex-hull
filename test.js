@@ -1,9 +1,7 @@
-var points = [];
-var width = 720;
-var height = 360;
+let points = [];
 
 function setup() {
-    createCanvas(width, height);
+    createCanvas(720, 360);
     for(let i = 0; i < 20; i++) {
         points[i] = new Point(random(0, width), random(0, height));
     }
