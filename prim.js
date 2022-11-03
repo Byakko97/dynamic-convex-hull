@@ -1,7 +1,7 @@
+// Geometric primitives, as well as constants and basic structures
+
 new p5;
 
-const POINT_COLOR = color(0, 0, 255);
-const POINT_DIAM = 5;
 const EPS = 1e-7;
 
 function f_equal(a, b) {
@@ -11,6 +11,10 @@ function f_equal(a, b) {
 function f_less(a, b) {
     return a < b - EPS;
 }
+
+
+const POINT_COLOR = color(0, 0, 255);
+const POINT_DIAM = 5;
 
 class Point {
     constructor(x, y) {
