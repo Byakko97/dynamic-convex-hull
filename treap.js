@@ -12,11 +12,11 @@ class Treap {
 function split(t, x) {
     if(!t) return [null, null];
     if(t.key.less_than(x) ) {
-        var right;
+        let right;
         [t.r, right] = split(t.r, x);
         return [t, right];
     } else {
-        var left;
+        let left;
         [left, t.l] = split(t.l, x);
         return [left, t];
     }
@@ -33,4 +33,12 @@ function merge(left, right) {
         right.l = merge(left, right.l);
         return right;
     }
+}
+
+// Inorder traversal of treap
+function inorder(treap, list) {
+    if(!treap) return;
+    inorder(treap.l, list);
+    list.push(treap.key);
+    inorder(treap.r, list);
 }

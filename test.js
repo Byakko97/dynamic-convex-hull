@@ -1,6 +1,6 @@
-let points = [];
-let width = 720;
-let height = 360;
+var points = [];
+var width = 720;
+var height = 360;
 
 function setup() {
     createCanvas(width, height);

@@ -31,9 +31,9 @@ class Point {
 
 // Two times the area of triangle abc
 function area2(a, b, c) {
-    va = createVector(a.x, a.y);
-    vb = createVector(a.x, a.y);
-    vc = createVector(c.x, c.y);
+    let va = createVector(a.x, a.y);
+    let vb = createVector(a.x, a.y);
+    let vc = createVector(c.x, c.y);
     vb.sub(va);
     vc.sub(va);
     return vbase.cross(vc);
