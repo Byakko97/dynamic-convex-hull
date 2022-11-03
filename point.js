@@ -2,6 +2,15 @@ new p5;
 
 const POINT_COLOR = color(0, 0, 255);
 const POINT_DIAM = 5;
+const EPS = 1e-7;
+
+function f_equal(a, b) {
+    return abs(a - b) < EPS;
+}
+
+function f_less(a, b) {
+    return a < b - EPS;
+}
 
 class Point {
     constructor(x, y) {
@@ -10,7 +19,7 @@ class Point {
     }
     // Compares this point with another by x coordinate
     less_than(other) {
-        return this.x != other.x ? this.x < other.x : this.y < other.y;
+        return !f_equal(x, other.x) ? f_less(this.x, other.x) : f_less(this.y, other.y);
     }
     draw() {
         noStroke();
@@ -32,5 +41,5 @@ function area2(a, b, c) {
 
 // Is point c at the left of the line ab?
 function left(a, b, c) {
-    return area2(a, b, c) > 0;
+    return f_less(0, area2(a, b, c));
 }
